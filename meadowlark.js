@@ -3,6 +3,17 @@ import express from "express";
 const app = express();
 const port = process.env.PORT || 3000;
 
+// Routes
+app.get("/", (req, res) => {
+    res.type('text/plain');
+    res.send('Meadowlark Travel');
+});
+
+app.get('/about', (req, res) => {
+    res.type('text/plain');
+    res.send('About Meadowlark Travel');
+});
+
 // Custom 404 page
 app.use((req, res) => {
     res.type('text/plain');
