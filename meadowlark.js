@@ -1,6 +1,14 @@
 import express from "express";
+import { engine as expressHandlebars } from "express-handlebars";
 
 const app = express();
+
+// configure Handlebars view engine
+app.engine('handlebars', expressHandlebars({
+    defaultLayout: 'main'
+}));
+app.set('view engine', 'handlebars');
+
 const port = process.env.PORT || 3000;
 
 // Routes
